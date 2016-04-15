@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>ParaViewWeb Visualizer</title>
+    <link href="../style/MainView.css" rel="stylesheet">
+    <style type="text/css">
+      .viewport {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='content'></div>
+    <script src="Visualizer.js"></script>
+    <script>
+      Visualizer.connect();
+    </script>
+  </body>
+</html>
