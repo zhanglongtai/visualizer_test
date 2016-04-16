@@ -1,0 +1,53 @@
+{
+  "name": "pvw-visualizer",
+  "description": "ParaViewWeb based application Standalone application useful to load and explore InSitu/Batch data products.",
+  "license": "BSD-3-Clause",
+  "version": "0.0.0-semantically-release",
+  "main": "./src/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kitware/visualizer.git"
+  },
+  "dependencies": {
+    "commander": "2.9.0",
+    "open": "0.0.5",
+    "shelljs": "0.6.0"
+  },
+  "devDependencies": {
+    "ws": "0.8.1",
+    "axios": "0.9.0",
+    "font-awesome": "4.5.0",
+    "gl-matrix": "2.3.1",
+    "hammerjs": "2.0.6",
+
+    "monologue.js": "0.3.4",
+    "mout": "0.11.1",
+    "normalize.css": "3.0.3",
+    "paraviewweb": "1.2.27",
+    "react": "0.14.7",
+    "react-dom": "0.14.7",
+
+    "kw-web-suite": "1.1.0",
+    "react-redux": "4.4.0",
+    "redux": "3.3.1"
+  },
+  "scripts": {
+    "postinstall": "fix-kw-web-suite || true",
+
+    "build": "fix-autobahn && webpack",
+    "build:debug": "fix-autobahn && webpack --display-modules",
+    "build:release": "export NODE_ENV=production && fix-autobahn && webpack -p",
+
+    "commit": "git cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "bin": {
+    "Visualizer": "./bin/pvw-visualizer-cli.js"
+  },
+  "preferGlobal": true,
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
